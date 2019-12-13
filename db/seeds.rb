@@ -1,11 +1,12 @@
-require("pry")
 require_relative("../models/hire_order")
 require_relative("../models/customer")
-require_relative("../models/equipment")
+require_relative("../models/hire_item")
 
-HiredEquipment.delete_all()
+require("pry")
+
+HireOrder.delete_all()
 Customer.delete_all()
-Equipment.delete_all()
+HireItem.delete_all()
 
 customer1 = Customer.new ({
 	'name' => 'Andrew',
@@ -21,24 +22,25 @@ customer2 = Customer.new ({ 'name' => 'Oscar',
 customer2.save()
 
 customer3 = Customer.new ({ 'name' => 'Andrew',
-	'address' => '64 Zoo Lane,
-	Edinburgh, EH1 1LT',
+	'address' => '64 Zoo Lane, Edinburgh, EH1 1LT',
 	'phone' => 123456
 })
 customer3.save()
 
-equipment1 = Equipment.new ({
-	'item' => 'shure sm58',
+hire_item1 = HireItem.new ({
+	'name' => 'shure sm58',
 	'price' => 20
 })
-equipment1.save()
+hire_item1.save()
 
-
-equipment1 = Equipment.new ({
-	'item' => 'DAS Action 12',
+hire_item2 = HireItem.new ({
+	'name' => 'DAS Action 12',
 	'price' => 100
 })
+hire_item2.save()
 
+binding.pry
+nil
 
 # hire_order1 = HireOrder.new ({
 # 	'customer_id' => customer1.id,

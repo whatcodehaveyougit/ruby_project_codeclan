@@ -1,1 +1,40 @@
-style.css
+body {
+  font-family: sans-serif;
+  color: white;
+  background-image: url(test.jpg);
+  background-repeat: no-repeat;
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  display: inline;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+nav li {
+  display: inline;
+  padding: 3% 4%;
+  margin: 14px 1%;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 32px;
+}

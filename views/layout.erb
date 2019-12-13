@@ -1,1 +1,22 @@
-layout.erb
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Edinburgh Sound</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <h1>Edinburgh Sound</h1>
+  <nav>
+    <ul>
+      <li><a href="/hire-orders">Hire Orders</a></li>
+      <li><a href="/customers">Customers</a></li>
+    </ul>
+  </nav>
+
+  <body>
+
+
+    <%= yield %>
+
+  </body>
+</html>
