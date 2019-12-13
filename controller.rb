@@ -10,5 +10,6 @@ get '/' do
 end
 
 get '/hire-stock' do
+  @hire_stock = HireItem.all
   erb(:hire-stock)
 end

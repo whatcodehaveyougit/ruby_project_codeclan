@@ -28,7 +28,7 @@ class Customer
 		end
 # ============== READ =================
 
-	def read()
+	def all()
 		sql = "SELECT * FROM customers WHERE id = $1"
 		values = [@id]
 		customer = SqlRunner.run(sql, values)

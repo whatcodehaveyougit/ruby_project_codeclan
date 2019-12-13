@@ -37,9 +37,12 @@ class HireItem
   def self.read_all()
     sql = "SELECT * FROM hire_stock"
     hire_stock = SqlRunner.run(sql)
-    HireStock.map(hire_stock)
+    result = map_items(hire_stock)
+    return result
   end
 
+  # hire_stock = SqlRunner.run(sql)
+  # HireStock.map(hire_stock)
   # ============== UPDATE =================
 
   def self.update()
