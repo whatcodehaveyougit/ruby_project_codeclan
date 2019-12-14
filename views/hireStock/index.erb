@@ -1,0 +1,23 @@
+  <div class="banner">
+    <h1>Hire Stock</h1>
+    <nav>
+      <ul class = "secondary-nav">
+        <li><a href="/hire-orders">Add Item for Hire</a></li>
+          <li><a href="/hire-stock">Update Item's Details</a></li>
+        <li><a href="/customers">Delete Hire Item</a></li>
+      </ul>
+    </nav>
+  </div>
+
+<div id="hire-stock" class="main-content-container">
+
+  <% @hireStock.each do |hireItem| %>
+    <div class="hire-item">
+      <p class="capitalize"><%= hireItem.name %></p>
+      <p>Price per day</p>
+      <p>£ <%= hireItem.price %></p>
+      <a href="/hire-stock/<%= hireItem.id %>">More Info</a>
+    </div>  <!-- Hire-item -->
+  <% end %>
+
+</div>

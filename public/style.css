@@ -9,9 +9,14 @@ body {
   background-size: cover; /* Resize the background image to cover the entire container */
 }
 
-h1 {
+body p {
+  font-size: 15px;
+}
+
+.main-heading {
   text-align: center;
   font-size: 50px;
+  color: white;
 }
 
 nav ul {
@@ -37,4 +42,65 @@ nav li {
   border: 1px solid white;
   border-radius: 5px;
   font-size: 32px;
+}
+
+.main-content-container {
+  margin: 0 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* ============== Global Pages ========== */
+
+.banner {
+  text-align: center;
+}
+
+.secondary-nav li {
+  display: inline;
+  padding: 1% 2%;
+  margin: 7px 1%;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* ============= Hire Stock ============= */
+
+.hire-item,
+.customer {
+  border: 1px solid white;
+  margin: 1%;
+  padding: 1%;
+  text-align: center;
+}
+
+.hire-item a,
+.customer a {
+  color: white;
+  text-decoration: none;
+}
+
+.hire-item a:hover {
+  text-decoration: underline;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+/*  ==================== Customers ============= */
+
+.customer-page {
+  text-align: center;
+}
+
+.customer-page p {
+  font-size: 25px;
+}
+
+/* ============= Forms ================== */
+
+.form-element {
+  margin: 20px 0px;
 }

@@ -1,6 +1,6 @@
-require_relative("../models/hire_order")
+require_relative("../models/hireOrder")
 require_relative("../models/customer")
-require_relative("../models/hire_item")
+require_relative("../models/hireItem")
 
 require("pry")
 
@@ -38,6 +38,12 @@ hire_item2 = HireItem.new ({
 	'price' => 100
 })
 hire_item2.save()
+
+hire_item3 = HireItem.new ({
+	'name' => 'Stands',
+	'price' => 100
+})
+hire_item3.save()
 
 binding.pry
 nil

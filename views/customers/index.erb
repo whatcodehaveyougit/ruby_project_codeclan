@@ -1,0 +1,23 @@
+
+<div class="banner">
+  <h1>Customers</h1>
+  <nav>
+    <ul class = "secondary-nav">
+      <li><a href="">Add Customer</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div id="customers" class="main-content-container">
+
+  <% @customer.each do |customer|%>
+  <div class="customer">
+
+    <p class="capitalize"><%= customer.name %></p>
+    <p class="capitalize"><%= customer.address %></p>
+    <p><%= customer.phone %></p>
+    <a href="/customers/<%= customer.id %>"><p>More Info</p></a>
+  </div>
+  <% end %>
+
+</div>

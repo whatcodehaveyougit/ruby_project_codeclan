@@ -28,7 +28,7 @@ class Customer
 		end
 # ============== READ =================
 
-	def all()
+	def read()
 		sql = "SELECT * FROM customers WHERE id = $1"
 		values = [@id]
 		customer = SqlRunner.run(sql, values)
@@ -36,12 +36,22 @@ class Customer
 		return result
 	end
 
-	def self.read_all()
+	def self.all()
 		sql = "SELECT * FROM customers"
 		customers = SqlRunner.run(sql)
 		result = customers.map {|customer_hash| Customer.new(customer_hash)}
 		return result
 	end
+
+	def self.find(id)
+		sql = "SELECT * FROM customers WHERE id = $1"
+		values = [id]
+		customer = SqlRunner.run(sql, values).first
+		customer_info = Customer.new(customer)
+		return customer_info
+	end
+
+
 
 # ============== UPDATE =================
 

@@ -1,13 +1,10 @@
 
-<div id="hire-stock">
 
-  <h2>Hire Stock</h2>
-
-    <% @hire_stock.each do |hire_item| %>
-    <div class="hire-item">
-    <p>Hire Item: <%= hire_item.name %></p>
-    <p>Price per day<%= hire_item.price %></p>
-    <% end %>
-    </div>  <!-- Hire-item -->
-
+<div class="banner">
+  <h1>Customers</h1>
+  <nav>
+    <ul class = "secondary-nav">
+      <li><a href="/hire-stock/new">Add Stock</a></li>
+    </ul>
+  </nav>
 </div>
