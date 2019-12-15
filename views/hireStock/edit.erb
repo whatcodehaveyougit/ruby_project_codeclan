@@ -1,0 +1,25 @@
+<div class="form-page-wrap">
+
+  <h2>Edit Item</h2>
+
+<h3>Update Details</h3>
+  <form method="POST" action="/hire-stock/<%= @hireItem.id %> ">
+    <div class="form-wrapper">
+
+      <div class="form-element">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="first_name" value=<%= @hireItem.name %>>
+      </div>
+
+      <div class="form-element">
+        <label for="price">Price</label>
+        <input type="text" name="price" id="price" value=<%= @hireItem.price %>>
+      </div>
+
+      <div class="form-element">
+        <input type="submit" value="submit"/>
+      </div>
+
+    </div>
+  </form>
+</div>

@@ -30,10 +30,26 @@ post '/hire-stock/?' do
   redirect to '/hire-stock/'
 end
 
-
 get '/hire-stock/:id' do
-  @hireStock = HireItem.find( params[:id] )
+  @hireItem = HireItem.find( params[:id] )
   erb(:"hireStock/show")
+end
+
+get '/hire-stock/:id/edit' do
+  @hireItem = HireItem.find( params[:id] )
+  erb(:"hire-stock/edit")
+end
+
+post '/hire-stock/:id' do
+  hireItem = HireItem.new(params)
+  hireItem.update()
+  redirect to "/hire-stock/#{params[:id]}"
+end
+
+post '/hire-stock/:id/delete' do
+  hireItem = HireItem.find(params[:id])
+  hireItem.delete()
+  redirect to "/hire-stock/"
 end
 
 
@@ -72,8 +88,21 @@ get '/customers/:id/edit' do
 end
 
 
+post '/customers/:id/delete' do
+  customer = Customer.find ( params[:id] )
+  customer.delete()
+    redirect to "/customers/"
+end
+
+
 # ============== HIRE ORDERS =================
 
 get '/hire-orders' do
   erb(:"hireOrders/index")
+end
+
+get '/hire-orders/new' do
+  @customers = Customers.all()
+  @hire_stock = HireItem.all()
+  erb(:"hireOrders/index/new")
 end

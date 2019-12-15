@@ -1,8 +1,13 @@
 
 <div class="hire-stock-page">
 
-  <h2><%= @hireStock.name %></h2>
+  <h2><%= @hireItem.name %></h2>
 
-  <p>£ <%= @hireStock.price %></p>
+  <p>£ <%= @hireItem.price %></p>
+
+
+   <form method="POST" action="/hire-stock/<%= @hireItem.id %>/delete">
+      <input type="submit" value="Delete Item"/>
+    </form>
 
 </div>

@@ -5,7 +5,7 @@ class HireOrder
   def initialize (options)
     @id = options['id'] if options['id']
     @customer_id = options['customer_id']
-    @hire_item_id = optons['hire_item_id']
+    @hire_item_id = options['hire_item_id']
     @start_date = options['start_date']
     @end_date = options['end_date']
     @notes = options['notes']
@@ -15,13 +15,14 @@ class HireOrder
 
   def save()
     sql = "INSERT INTO hire_orders (
-    customer_id, hire_stock_id, start_date, end_date, notes
-    ) VALUES ( $1, $2, $3, $4, $5 )"
+    customer_id, hire_item_id, start_date, end_date, notes
+    ) VALUES ( $1, $2, $3, $4, $5
+      ) RETURNING id"
+      values = [@customer_id, @hire_item_id, @start_date, @end_date, @notes]
     result = SqlRunner.run(sql, values)
-    id = results.first['id']
+    id = result.first['id']
     @id = id
   end
-
 
 
   # ============== READ =================
@@ -64,7 +65,15 @@ class HireOrder
 
 
 
-
+  def order()
+    sql = "SELECT customers.name, hire_stock.name, hire_orders.id, hire_orders.notes
+    FROM
+    ((customers
+      INNER JOIN hire_orders ON hire_orders.customer_id = customers.id)
+      INNER JOIN hire_stock ON hire_orders.hire_item_id = hire_stock.id);"
+		order_info = SqlRunner.run(sql)
+    return order_info.map { |k,v| [k, v] }
+  end
 
 
 

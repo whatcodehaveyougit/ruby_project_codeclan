@@ -1,9 +1,16 @@
 
 <div class="customer-page">
 
-<h2><%= @customer.name %></h2>
+  <p class="capitalize name"><%= @customer.name %></p>
+  <p class="capitalize"><%= @customer.address %></p>
+  <p><%= @customer.phone %></p>
 
-<p><%= @customer.address %></p>
-<p><%= @customer.phone %></p>
+  <a href="/customers/<%= @customer.id %>/edit">
+    <button type="button">Edit</button>
+  </a>
+
+  <form method="POST" action="/customers/<%= @customer.id %>/delete">
+    <input type="submit" value="Delete Customer"/>
+  </form>
 
 </div>

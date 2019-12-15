@@ -55,9 +55,9 @@ class HireItem
 
   # ============== UPDATE =================
 
-  def self.update()
+  def update()
     sql = "UPDATE hire_stock SET (name, price) = ($1, $2) WHERE id = $3"
-    values = [@item, @price, @id]
+    values = [@name, @price, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -75,7 +75,14 @@ class HireItem
     SqlRunner.run(sql)
   end
 
+  # ================= JOIN ====================
 
 
+  def self.hired()
+    sql = "SELECT * FROM hire_stock
+    INNER JOIN hire_orders ON hire_stock.id = hire_orders.hire_item_id;"
+    result = SqlRunner.run(sql)
+    return result.map { |hash| HireItem.new(hash)}
+  end
 
 end

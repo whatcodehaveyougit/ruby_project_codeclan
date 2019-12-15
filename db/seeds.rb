@@ -45,14 +45,27 @@ hire_item3 = HireItem.new ({
 })
 hire_item3.save()
 
+
+
+hire_order1 = HireOrder.new ({
+	'customer_id' => customer1.id,
+	'hire_item_id' => hire_item1.id,
+	'price' => hire_item1.price,
+	'start_date' => '12/1/19',
+	'end_date' => '14/1/19',
+	'notes' => 'is collecting at 7pm'
+})
+hire_order1.save()
+
+hire_order2 = HireOrder.new ({
+	'customer_id' => customer2.id,
+	'hire_item_id' => hire_item2.id,
+	'price' => hire_item2.price,
+	'start_date' => '12/1/19',
+	'end_date' => '14/1/19',
+	'notes' => 'is collecting at 0pm'
+})
+hire_order2.save()
+
 binding.pry
 nil
-
-# hire_order1 = HireOrder.new ({
-# 	'customer_id' => customer1.id,
-# 	'hired_equipment' => equipment1.id,
-# 	'price' => equipment.price,
-# 	'start_date' => 12/1/19
-# 	'end_date' => 14/1/19
-# 	'notes' => 'is collecting at 6pm'
-# })
