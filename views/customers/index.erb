@@ -3,7 +3,7 @@
   <h1>Customers</h1>
   <nav>
     <ul class = "secondary-nav">
-      <li><a href="">Add Customer</a></li>
+      <li><a href="/customers/new">Add Customer</a></li>
     </ul>
   </nav>
 </div>
@@ -13,10 +13,11 @@
   <% @customer.each do |customer|%>
   <div class="customer">
 
-    <p class="capitalize"><%= customer.name %></p>
+    <p class="capitalize name"><%= customer.name %></p>
     <p class="capitalize"><%= customer.address %></p>
     <p><%= customer.phone %></p>
-    <a href="/customers/<%= customer.id %>"><p>More Info</p></a>
+    <a href="/customers/<%= customer.id %>"><p>---- More Info ----</p></a>
+    <a href="/customers/<%= customer.id %>/edit"><button type="button">Edit</button></a>
   </div>
   <% end %>
 

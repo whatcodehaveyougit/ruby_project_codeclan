@@ -45,6 +45,14 @@ class HireItem
     return item_data.map { |item| HireItem.new(item) }
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM hire_stock WHERE id = $1"
+    values = [id]
+    item_hash = SqlRunner.run(sql, values).first
+    item = HireItem.new(item_hash)
+    return item
+  end
+
   # ============== UPDATE =================
 
   def self.update()

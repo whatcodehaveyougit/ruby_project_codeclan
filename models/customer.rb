@@ -46,9 +46,9 @@ class Customer
 	def self.find(id)
 		sql = "SELECT * FROM customers WHERE id = $1"
 		values = [id]
-		customer = SqlRunner.run(sql, values).first
-		customer_info = Customer.new(customer)
-		return customer_info
+		customer_hash = SqlRunner.run(sql, values).first
+		customer = Customer.new(customer_hash)
+		return customer
 	end
 
 

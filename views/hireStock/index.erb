@@ -2,9 +2,7 @@
     <h1>Hire Stock</h1>
     <nav>
       <ul class = "secondary-nav">
-        <li><a href="/hire-orders">Add Item for Hire</a></li>
-          <li><a href="/hire-stock">Update Item's Details</a></li>
-        <li><a href="/customers">Delete Hire Item</a></li>
+        <li><a href="/hire-stock/new">Add Item for Hire</a></li>
       </ul>
     </nav>
   </div>
@@ -13,10 +11,9 @@
 
   <% @hireStock.each do |hireItem| %>
     <div class="hire-item">
-      <p class="capitalize"><%= hireItem.name %></p>
-      <p>Price per day</p>
-      <p>£ <%= hireItem.price %></p>
-      <a href="/hire-stock/<%= hireItem.id %>">More Info</a>
+      <p class="capitalize name"><%= hireItem.name %></p>
+      <p>Price per day:  £ <%= hireItem.price %></p>
+      <a href="/hire-stock/<%= hireItem.id %>">----- More Info -----</a>
     </div>  <!-- Hire-item -->
   <% end %>
 

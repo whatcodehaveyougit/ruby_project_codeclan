@@ -3,14 +3,14 @@ body {
   color: white;
   background-image: url(test.jpg);
   background-repeat: no-repeat;
-  height: 500px; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+  height: 500px;
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
 }
 
 body p {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .main-heading {
@@ -37,9 +37,9 @@ nav ul li a:hover {
 
 nav li {
   display: inline;
-  padding: 3% 4%;
+  padding: 31px 38px;
   margin: 14px 1%;
-  border: 1px solid white;
+  border: 2px solid white;
   border-radius: 5px;
   font-size: 32px;
 }
@@ -62,7 +62,7 @@ nav li {
   margin: 7px 1%;
   border: 1px solid white;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* ============= Hire Stock ============= */
@@ -95,12 +95,27 @@ nav li {
   text-align: center;
 }
 
+.name {
+  font-size: 20px;
+}
+
 .customer-page p {
   font-size: 25px;
 }
 
+/* ============ Hire Stock =============== */
+
+.hire-stock-page {
+  text-align: center;
+}
+
 /* ============= Forms ================== */
+.form-page-wrap h2,
+.form-page-wrap h3 {
+  text-align: center;
+}
 
 .form-element {
   margin: 20px 0px;
+  text-align: center;
 }
