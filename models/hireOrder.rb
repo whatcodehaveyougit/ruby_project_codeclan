@@ -1,6 +1,7 @@
 require_relative("../db/sql_runner")
 require_relative("../models/customer")
 require_relative("../models/hireItem")
+require 'date'
 
 class HireOrder
 
@@ -32,12 +33,8 @@ class HireOrder
 
   # ============== READ =================
 
-  def read()
-    sql = "SELECT * FROM hire_orders WHERE id = $1"
-    values = [@id]
-    hire_order_hash = SqlRunner.run(sql, values)
-    return HireOrder.new(hire_order_hash.first)
-  end
+
+
 
   def hire_item()
     sql = "SELECT * FROM hire_stock WHERE id = $1"
@@ -113,6 +110,14 @@ class HireOrder
   end
 
 
+  def calc()
+    sql = "SELECT hire_orders.start_date, hire_orders.end_date FROM hire_orders WHERE id = $1;"
+    values = [@id]
+    result = SqlRunner.run(sql, values).first
+    a = Date.parse(result["end_date"])
+    b = Date.parse(result["start_date"])
+     return (a - b).to_i
+  end
 
 
 

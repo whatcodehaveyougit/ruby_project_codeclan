@@ -19,7 +19,7 @@ CREATE TABLE hire_orders(
 	id SERIAL PRIMARY KEY,
 	customer_id INT REFERENCES customers(id) ON DELETE CASCADE,
 	hire_item_id INT REFERENCES hire_stock(id) ON DELETE CASCADE,
-	start_date VARCHAR(255),
-	end_date VARCHAR(255),
+	start_date DATE NOT NULL,
+	end_date DATE NOT NULL,
 	notes VARCHAR
 );

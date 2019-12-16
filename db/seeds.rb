@@ -51,8 +51,8 @@ hire_order1 = HireOrder.new ({
 	'customer_id' => customer1.id,
 	'hire_item_id' => hire_item1.id,
 	'price' => hire_item1.price,
-	'start_date' => '12/1/19',
-	'end_date' => '14/1/19',
+	'start_date' => '1998-04-16',
+	'end_date' => '1998-04-18',
 	'notes' => 'is collecting at 7pm'
 })
 hire_order1.save()
@@ -61,8 +61,8 @@ hire_order2 = HireOrder.new ({
 	'customer_id' => customer2.id,
 	'hire_item_id' => hire_item2.id,
 	'price' => hire_item2.price,
-	'start_date' => '12/1/19',
-	'end_date' => '14/1/19',
+	'start_date' => '1998-04-16',
+	'end_date' => '1998-05-17',
 	'notes' => 'is collecting at 0pm'
 })
 hire_order2.save()
