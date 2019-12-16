@@ -119,6 +119,10 @@ class HireOrder
      return (a - b).to_i
   end
 
+  def price
+    return calc()
+  end
+
 
 
 

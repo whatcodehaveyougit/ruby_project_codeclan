@@ -53,6 +53,7 @@ hire_order1 = HireOrder.new ({
 	'price' => hire_item1.price,
 	'start_date' => '1998-04-16',
 	'end_date' => '1998-04-18',
+	# 'price' => calc() * hire_item1.price,
 	'notes' => 'is collecting at 7pm'
 })
 hire_order1.save()
@@ -63,6 +64,7 @@ hire_order2 = HireOrder.new ({
 	'price' => hire_item2.price,
 	'start_date' => '1998-04-16',
 	'end_date' => '1998-05-17',
+	# 'price' => calc() * hire_item1.price,
 	'notes' => 'is collecting at 0pm'
 })
 hire_order2.save()
