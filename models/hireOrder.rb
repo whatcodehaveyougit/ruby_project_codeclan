@@ -52,14 +52,23 @@ class HireOrder
     hire_orders.map { |order| HireOrder.new(order) }
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM hire_orders WHERE id = $1"
+    values = [id]
+    hire_item_hash = SqlRunner.run(sql, values).first
+    return HireOrder.new(hire_item_hash)
+  end
+
   # ============== UPDATE =================
 
   def update()
-    sql = "UPDATE hire_orders SET (customer_id, hire_stock_id, start_date, end_date, notes)
-    = ($1, $2, $3, $4, $5 ) WHERE id = $6"
-    values = [@customer_id, @hire_stock_id, @start_date, @end_date, @notes]
+    sql = "UPDATE hire_orders SET
+    (customer_id, hire_item_id, start_date, end_date, notes)
+     = ($1, $2, $3, $4, $5 ) WHERE id = $6"
+    values = [@customer_id, @hire_item_id, @start_date, @end_date, @notes, @id]
     SqlRunner.run(sql, values)
   end
+
   # ============== DELETE =================
 
   def delete()

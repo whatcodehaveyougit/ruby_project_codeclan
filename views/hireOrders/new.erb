@@ -16,8 +16,8 @@
       </div>
 
   <div class="form-element">
-     <label for="customer_select">Select Customer:</label>
-     <select name="customer_id" id="customer_select">
+     <label for="customer_id">Select Customer:</label>
+     <select name="customer_id" id="customer_id">
        <% @customers.each do |customer| %>
            <option value=<%= customer.id %>><%= customer.name %></option>
        <% end %>
@@ -25,19 +25,22 @@
    </div>
 
    <div class="form-element">
-      <label for="hire_item_select">Select Hire Item</label>
-      <select name="hireItem_id" id="hire_item_select">
+      <label for="hire_item_id">Select Hire Item</label>
+      <select name="hire_item_id" id="hire_item_id">
         <% @hireStock.each do |hireItem| %>
             <option value=<%= hireItem.id %>><%= hireItem.name %></option>
         <% end %>
       </select>
     </div>
 
-
-
       <div class="form-element">
         <label for="phone">Phone</label>
         <input type="number" name="phone" id="phone"/>
+      </div>
+
+      <div class="form-element">
+        <label for="phone">Notes</label>
+        <input type="text" name="notes" id="notes"/>
       </div>
 
       <div class="form-element">

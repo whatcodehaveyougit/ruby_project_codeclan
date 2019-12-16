@@ -104,12 +104,36 @@ get '/hire-orders/new' do
   erb(:"hireOrders/new")
 end
 
-get '/hire-orders' do
+get '/hire-orders/?' do
   @hire_orders = HireOrder.all()
   erb(:'hireOrders/index')
 end
 
+# === New ===
+
 post '/hire-orders/?' do
-  HireOrder.new(params).save()
+  order = HireOrder.new(params)
+  order.save()
   redirect to '/hire-orders'
+end
+
+# === Update ===
+
+get '/hire-orders/:id/edit' do
+  @customers = Customer.all()
+  @hireStock = HireItem.all()
+  @hire_order = HireOrder.find( params[:id] )
+  erb(:"hireOrders/edit")
+end
+
+post '/hire-orders/:id/?' do
+  hire_order = HireOrder.new( params )
+  hire_order.update()
+  redirect to "/hire-orders"
+end
+
+post '/hire-orders/:id/delete' do
+  hire_order = HireOrder.find( params[:id] )
+  hire_order.delete()
+  redirect to "/hire-orders"
 end
