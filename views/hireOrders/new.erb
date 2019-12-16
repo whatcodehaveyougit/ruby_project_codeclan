@@ -15,14 +15,23 @@
         <input type="date" name="end_date" id="end_date">
       </div>
 
-  <div class="form-el">
+  <div class="form-element">
      <label for="customer_select">Select Customer:</label>
      <select name="customer_id" id="customer_select">
        <% @customers.each do |customer| %>
-           <option value=<%= customer.id %>><%= customer.name.capitalize %></option>
+           <option value=<%= customer.id %>><%= customer.name %></option>
        <% end %>
      </select>
    </div>
+
+   <div class="form-element">
+      <label for="hire_item_select">Select Hire Item</label>
+      <select name="hireItem_id" id="hire_item_select">
+        <% @hireStock.each do |hireItem| %>
+            <option value=<%= hireItem.id %>><%= hireItem.name %></option>
+        <% end %>
+      </select>
+    </div>
 
 
 

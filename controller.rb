@@ -1,5 +1,6 @@
 require('sinatra')
 require('sinatra/contrib/all')
+require('pry')
 require_relative('models/hireOrder')
 # I changed this hireOrder and made it at the top instead of the bottom..
 require_relative('models/customer')
@@ -37,7 +38,7 @@ end
 
 get '/hire-stock/:id/edit' do
   @hireItem = HireItem.find( params[:id] )
-  erb(:"hire-stock/edit")
+  erb(:"hireStock/edit")
 end
 
 post '/hire-stock/:id' do
@@ -97,12 +98,13 @@ end
 
 # ============== HIRE ORDERS =================
 
-get '/hire-orders' do
-  erb(:"hireOrders/index")
+get '/hire-orders/new' do
+  @customers = Customer.all()
+  @hireStock = HireItem.all()
+  erb(:"hireOrders/new")
 end
 
-get '/hire-orders/new' do
-  @customers = Customers.all()
-  @hire_stock = HireItem.all()
-  erb(:"hireOrders/index/new")
+get '/hire-orders' do
+  @hire_orders = HireOrder.all()
+  erb(:'hireOrders/index')
 end

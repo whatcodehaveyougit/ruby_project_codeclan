@@ -1,4 +1,6 @@
 require_relative("../db/sql_runner")
+require_relative("../models/customer")
+require_relative("../models/hireItem")
 
 class HireOrder
 
@@ -35,10 +37,10 @@ class HireOrder
     return result
   end
 
-  def self.read_all()
+  def self.all()
     sql = "SELECT * FROM hire_orders"
-    hire_orders = SqlRunner(sql)
-    HireOrder.map(hire_orders)
+    hire_orders = SqlRunner.run(sql)
+    hire_orders.map { |order| HireOrder.new(order) }
   end
 
   # ============== UPDATE =================
@@ -63,7 +65,19 @@ class HireOrder
     SqlRunner.run(sql)
   end
 
+  def customer()
+    sql = "SELECT * FROM customers WHERE id = $1"
+    values = [@customer_id]
+    hash = SqlRunner.run(sql, values)
+    return Customer.new(hash.first)
+  end
 
+  def hire_item()
+    sql = "SELECT * FROM hire_stock WHERE id = $1"
+    values = [@hire_item_id]
+    hire_item_hash = SqlRunner.run(sql, values)
+    return HireItem.new(hire_item_hash.first)
+  end
 
   def order()
     sql = "SELECT customers.name, hire_stock.name, hire_orders.id, hire_orders.notes
