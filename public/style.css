@@ -123,4 +123,6 @@ nav li {
 /* ================ Hire Orders =============== */
 
 .hire-orders {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }

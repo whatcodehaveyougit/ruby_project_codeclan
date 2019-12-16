@@ -108,3 +108,8 @@ get '/hire-orders' do
   @hire_orders = HireOrder.all()
   erb(:'hireOrders/index')
 end
+
+post '/hire-orders/?' do
+  HireOrder.new(params).save()
+  redirect to '/hire-orders'
+end

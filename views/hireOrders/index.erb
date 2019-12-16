@@ -9,10 +9,16 @@
 
 
 <div class="hire-orders">
-  <% @hire_orders.each do |hire_item| %>
+  <h3>Name</h3>
+  <h3>Item</h3>
+  <h3>Price</h3>
+  <h3>Start Date</h3>
+  <% @hire_orders.each do |hire_order| %>
 
-  <p class="capitalize name"><%= hire_item.customer.name %></p>
-  <p class="capitalize name"><%= hire_item.hire_item.name %></p>
+  <p class="capitalize name"><%= hire_order.customer.name %></p>
+  <p class="capitalize name"><%= hire_order.hire_item.name %></p>
+  <p class="capitalize name"><%= hire_order.hire_item.price %></p>
+  <p class="capitalize name"><%= hire_order.start_date %></p>
 
   <% end %>
 

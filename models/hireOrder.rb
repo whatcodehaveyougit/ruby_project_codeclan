@@ -4,6 +4,9 @@ require_relative("../models/hireItem")
 
 class HireOrder
 
+  attr_reader :id
+  attr_accessor :customer_id, :hire_item_id, :start_date, :end_date, :notes
+
   def initialize (options)
     @id = options['id'] if options['id']
     @customer_id = options['customer_id']
@@ -33,8 +36,14 @@ class HireOrder
     sql = "SELECT * FROM hire_orders WHERE id = $1"
     values = [@id]
     hire_order_hash = SqlRunner.run(sql, values)
-    result = HireOrder.new(hire_order_hash.first)
-    return result
+    return HireOrder.new(hire_order_hash.first)
+  end
+
+  def hire_item()
+    sql = "SELECT * FROM hire_stock WHERE id = $1"
+    values = [@hire_item_id]
+    hire_item_hash = SqlRunner.run(sql, values)
+    return HireItem.new(hire_item_hash.first)
   end
 
   def self.all()
@@ -77,6 +86,11 @@ class HireOrder
     values = [@hire_item_id]
     hire_item_hash = SqlRunner.run(sql, values)
     return HireItem.new(hire_item_hash.first)
+  end
+
+# A Hire Order Instantiation is getting passed into here
+  def hire_order()
+    return
   end
 
   def order()
