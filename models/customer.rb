@@ -77,9 +77,44 @@ end
 		SqlRunner.run(sql)
 	end
 
-# ===============================
+# ==============================
 
 
+# def hired()
+# 	sql = "SELECT * FROM hire_stock
+# 	INNER JOIN customers ON hire_order.customer_id = customer.id "
+# 	result = SqlRunner.run(sql)
+# 	return result.map { |hash| HireItem.new(hash)}
+# end
+
+def hired()
+	sql = "SELECT * FROM hire_stock
+	INNER JOIN hire_orders ON hire_orders.hire_item_id = hire_stock.id
+	WHERE hire_orders.customer_id = $1"
+	values = [@id]
+	result = SqlRunner.run(sql, values)
+	return result.map { |hash| HireItem.new(hash)}
+end
+
+def all_orders()
+	sql = "SELECT * FROM hire_orders
+	WHERE hire_orders.customer_id = $1"
+	values = [@id]
+	result = SqlRunner.run(sql, values)
+	return result.map { |hash| HireOrder.new(hash)}
+end
+
+	#
+	#
+  # def hired()
+  #   sql = "SELECT hire_stock.* FROM ((customers
+  #   INNER JOIN hire_orders ON customer.id = hire_orders.customer_id)
+  #   INNER JOIN hire_stock ON hire_stock.id = hire_orders.hire_item_id)
+	# 	WHERE customer.id = $1;"
+  #   result = SqlRunner.run(sql)
+  #   return result.map { |hash| HireItem.new(hash)}
+  # end
+	#
 
 
 end

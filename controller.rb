@@ -126,6 +126,11 @@ get '/hire-orders/:id/edit' do
   erb(:"hireOrders/edit")
 end
 
+post '/hire-orders/all-orders' do
+  @hired_items = Customer.find(params[:customer_id]).hired
+
+end
+
 post '/hire-orders/:id/?' do
   hire_order = HireOrder.new( params )
   hire_order.update()
@@ -136,4 +141,9 @@ post '/hire-orders/:id/delete' do
   hire_order = HireOrder.find( params[:id] )
   hire_order.delete()
   redirect to "/hire-orders"
+end
+
+get '/hire-orders/all-orders' do
+  @customers = Customer.all()
+  erb (:"hireOrders/allOrders")
 end

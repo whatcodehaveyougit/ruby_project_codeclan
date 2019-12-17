@@ -99,16 +99,6 @@ class HireOrder
     return
   end
 
-  def order()
-    sql = "SELECT customers.name, hire_stock.name, hire_orders.id, hire_orders.notes
-    FROM
-    ((customers
-      INNER JOIN hire_orders ON hire_orders.customer_id = customers.id)
-      INNER JOIN hire_stock ON hire_orders.hire_item_id = hire_stock.id);"
-		order_info = SqlRunner.run(sql)
-    return order_info.map { |k,v| [k, v] }
-  end
-
 
   def calc()
     sql = "SELECT hire_orders.start_date, hire_orders.end_date FROM hire_orders WHERE id = $1;"
@@ -119,12 +109,23 @@ class HireOrder
      return (a - b).to_i
   end
 
-  def price
-    return calc()
-  end
+  # def price
+  #   return calc()
+  # end
 
 
 
+  # I ended up not using this and using the methods instead to get the data.
+  # THis works but I could not get this to display on the front end
+    # def order()
+    #   sql = "SELECT customers.name, hire_stock.name, hire_orders.id, hire_orders.notes
+    #   FROM
+    #   ((customers
+    #     INNER JOIN hire_orders ON hire_orders.customer_id = customers.id)
+    #     INNER JOIN hire_stock ON hire_orders.hire_item_id = hire_stock.id);"
+  	# 	order_info = SqlRunner.run(sql)
+    #   return order_info.map { |k,v| [k, v] }
+    # end
 
 
 

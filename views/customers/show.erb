@@ -13,4 +13,13 @@
     <input type="submit" value="Delete Customer"/>
   </form>
 
+  <hr>
+  <h2>Hired Items</h2>
+  <% @customer.hired.each do |item| %>
+  <hr>
+    <p><%= item.name.capitalize %></p>
+    <p><%= item.price %></p>
+    <hr>
+  <% end %>
+
 </div>

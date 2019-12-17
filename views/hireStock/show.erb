@@ -5,7 +5,7 @@
 
   <p>£ <%= @hireItem.price %></p>
 
-
+    <a href="/hire-stock/<%= @hireItem.id %>/edit"><button type="button">Edit</button></a>
    <form method="POST" action="/hire-stock/<%= @hireItem.id %>/delete">
       <input type="submit" value="Delete Item"/>
     </form>

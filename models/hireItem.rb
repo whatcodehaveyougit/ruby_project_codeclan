@@ -77,12 +77,18 @@ class HireItem
 
   # ================= JOIN ====================
 
+# This is a class method as I want to return ALL the items which are hired.
+# All the orders - not even on a specific date - just all the orders
 
-  def self.hired()
-    sql = "SELECT * FROM hire_stock
-    INNER JOIN hire_orders ON hire_stock.id = hire_orders.hire_item_id;"
-    result = SqlRunner.run(sql)
-    return result.map { |hash| HireItem.new(hash)}
-  end
+
+
+
+
+
+
+
+  # def available_items()
+  #   sql "SELECT * FROM "
+  # end
 
 end
