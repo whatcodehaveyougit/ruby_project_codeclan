@@ -117,6 +117,12 @@ post '/hire-orders/?' do
   redirect to '/hire-orders'
 end
 
+# how to differentiate ===============
+post '/hire-orders/save-customer' do
+  Customer.new(params).save()
+  redirect to '/hire-orders/new'
+end
+
 # === Update ===
 
 get '/hire-orders/:id/edit' do

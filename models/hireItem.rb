@@ -8,7 +8,7 @@ class HireItem
   def initialize (options)
     @id = options['id'].to_i if options ['id']
     @name = options['name']
-    @price = options['price']
+    @price = options['price'].to_i
   end
 
   # ============== CREATE =================
@@ -76,14 +76,6 @@ class HireItem
   end
 
   # ================= JOIN ====================
-
-# This is a class method as I want to return ALL the items which are hired.
-# All the orders - not even on a specific date - just all the orders
-
-
-
-
-
 
 
 

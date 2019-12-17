@@ -9,9 +9,9 @@ class Customer
 
 	def initialize (options)
 		@id = options['id'].to_i if options['id']
-	  @name = options['name']
-		@address = options['address']
-		@phone = options['phone']
+	  @name = options['name'].to_s
+		@address = options['address'].to_s
+		@phone = options['phone'].to_i
 	end
 
 # ============== CREATE =================

@@ -12,7 +12,9 @@
 <div class="hire-orders">
   <h3 class="order-col">Name</h3>
   <h3 class="order-col">Item</h3>
-  <h3 class="order-col">Price</h3>
+  <h3 class="order-col">Day Price</h3>
+  <h3 class="order-col">Full Price</h3>
+  <h3 class="order-col">Discounted Price</h3>
   <h3 class="order-col">Start Date</h3>
   <h3 class="order-col">End Date</h3>
   <h3 class="order-col">Notes</h3>
@@ -30,7 +32,9 @@
   </div>
 
   <p class="capitalize name order-col"><%= hire_order.hire_item.name %></p>
-  <p class="capitalize name order-col"><%= hire_order.hire_item.price %></p>
+  <p class="capitalize name order-col">£ <%= hire_order.hire_item.price %></p>
+  <p class="capitalize name order-col">£ <%= hire_order.full_price %></p>
+  <p class="capitalize name order-col">£ <%= hire_order.discounted_price.to_i %></p>
   <p class="capitalize name order-col"><%= hire_order.start_date %></p>
   <p class="capitalize name order-col"><%= hire_order.end_date %></p>
   <p class="capitalize name order-col"><%= hire_order.notes %></p>

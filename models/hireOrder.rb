@@ -99,6 +99,19 @@ class HireOrder
     return
   end
 
+  def full_price()
+    a = calc()
+    b = hire_item().price
+    return a * b
+  end
+
+  def discounted_price()
+    a = full_price()
+    if a > 100
+      a * 0.9
+    else return a.to_i
+    end
+  end
 
   def calc()
     sql = "SELECT hire_orders.start_date, hire_orders.end_date FROM hire_orders WHERE id = $1;"
@@ -109,9 +122,12 @@ class HireOrder
      return (a - b).to_i
   end
 
-  # def price
-  #   return calc()
-  # end
+
+
+
+
+
+
 
 
 

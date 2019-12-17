@@ -124,9 +124,14 @@ nav li {
 
 .hire-orders {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .order-col {
   text-align: center;
+}
+
+.new-order-page-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
