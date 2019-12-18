@@ -1,22 +1,43 @@
 body {
   font-family: sans-serif;
-  color: white;
+  color: black;
   background-image: url(test.jpg);
   background-repeat: no-repeat;
   height: 500px;
   background-position: center;
   background-repeat: repeat-y;
   background-size: cover;
+  margin: 0px;
 }
 
 body p {
   font-size: 18px;
 }
 
-.main-heading {
-  text-align: center;
-  font-size: 50px;
+div#top-bar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  background-color: #3b3f45;
   color: white;
+}
+
+.main-heading {
+  display: inline;
+  margin-left: 29px;
+}
+
+.main-heading a {
+  text-align: center;
+  font-size: 70px;
+  text-decoration: none;
+  color: white;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 5px;
+}
+
+div#top-bar-wrapper nav {
+  display: flex;
+  align-items: center;
 }
 
 nav ul {
@@ -27,21 +48,31 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  color: white;
   display: inline;
+  color: inherit;
 }
 
 nav ul li a:hover {
   text-decoration: underline;
 }
 
-nav li {
+.secondary-nav li a {
+  font-size: 25px;
+}
+
+.secondary-nav li {
+  width: 329px;
+  border: 1px solid black;
+}
+
+nav ul li {
   display: inline;
-  padding: 31px 38px;
+  padding: 10px 12px;
   margin: 14px 1%;
-  border: 2px solid white;
   border-radius: 5px;
   font-size: 32px;
+  text-align: center;
+  width: 200px;
 }
 
 .main-content-container {
@@ -50,19 +81,47 @@ nav li {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+button.edit-button {
+  background-color: #259238;
+  color: white;
+  width: 135px;
+  border-radius: 8px;
+}
+
+.delete-button {
+  background-color: #b13d3d;
+  color: white;
+  border-radius: 8px;
+  width: 135px;
+  margin-bottom: 17px;
+  margin-top: 5px;
+}
+
+/*===========  Global Table CSS ============ */
+
+.hire-order-table-headings,
+.hire-item-table-headings,
+.customer-table-headings {
+  background-color: #2280bf;
+}
+
+.hire-order-table-headings h3,
+.hire-item-table-headings h3,
+.customer-table-headings h3 {
+  color: white;
+  letter-spacing: 2px;
+}
+
+.order-row:nth-child(even),
+.hire-item-row:nth-child(even),
+.customer-row:nth-child(even) {
+  background: #e8e8e8;
+}
+
 /* ============== Global Pages ========== */
 
 .banner {
   text-align: center;
-}
-
-.secondary-nav li {
-  display: inline;
-  padding: 1% 2%;
-  margin: 7px 1%;
-  border: 1px solid white;
-  border-radius: 5px;
-  font-size: 18px;
 }
 
 /* ============= Hire Stock ============= */
@@ -70,15 +129,24 @@ nav li {
 .hire-item,
 .customer {
   border: 1px solid white;
-  margin: 1%;
-  padding: 1%;
+  margin: 1% 0;
+  padding: 1% 0;
   text-align: center;
 }
 
 .hire-item a,
 .customer a {
-  color: white;
+  color: inherit;
   text-decoration: none;
+}
+
+.hire-item-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.hire-item-col {
+  display: flex;
 }
 
 .hire-item a:hover {
@@ -87,6 +155,15 @@ nav li {
 
 .capitalize {
   text-transform: capitalize;
+}
+.hire-item-row .name,
+.customer-row .name {
+  font-size: 25px;
+}
+
+.hire-item-row p,
+.customer-row p {
+  font-size: 24px;
 }
 
 /*  ==================== Customers ============= */
@@ -101,6 +178,24 @@ nav li {
 
 .customer-page p {
   font-size: 25px;
+}
+
+.customer-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: center;
+}
+
+.customer-table-headings {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: center;
+}
+
+.customer-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ============ Hire Stock =============== */
@@ -122,7 +217,17 @@ nav li {
 
 /* ================ Hire Orders =============== */
 
-.hire-orders {
+.order-heading {
+  text-align: center;
+}
+
+.hire-item-table-headings {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.hire-order-table-headings,
+.order-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
@@ -134,4 +239,5 @@ nav li {
 .new-order-page-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-top: 50px;
 }

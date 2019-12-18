@@ -1,6 +1,5 @@
 
 <div class="banner">
-  <h1>Customers</h1>
   <nav>
     <ul class = "secondary-nav">
       <li><a href="/customers/new">Add Customer</a></li>
@@ -8,19 +7,28 @@
   </nav>
 </div>
 
-<div id="customers" class="main-content-container">
+<div class="customer-table-headings">
+  <h3 class="order-heading">Name</h3>
+  <h3 class="order-heading">Address</h3>
+  <h3 class="order-heading">Phone</h3>
+  <h3 class="order-heading">More Info</h3>
+</div>
+
+<div id="customers" class="">
 
   <% @customer.each do |customer|%>
-  <div class="customer">
+  <div class="customer-row">
+    <div>
+      <p class="capitalize name"><%= customer.name %></p>
+      <a href="/customers/<%= customer.id %>/edit"><button class="edit-button" type="button">Edit</button></a>
+      <form method="POST" action="/customers/<%= customer.id %>/delete">
+         <input class="delete-button" type="submit" value="Delete Customer"/>
+       </form>
+    </div>
+    <p class="capitalize customer-box"><%= customer.address %></p>
+    <p class="customer-box"><%= customer.phone %></p>
+    <p class="customer-box"><a href="/customers/<%= customer.id %>">More Info</a></p>
 
-    <p class="capitalize name"><%= customer.name %></p>
-    <p class="capitalize"><%= customer.address %></p>
-    <p><%= customer.phone %></p>
-    <a href="/customers/<%= customer.id %>"><p>---- More Info ----</p></a>
-    <a href="/customers/<%= customer.id %>/edit"><button type="button">Edit</button></a>
-    <form method="POST" action="/customers/<%= customer.id %>/delete">
-       <input type="submit" value="Delete Customer"/>
-     </form>
   </div>
   <% end %>
 

@@ -2,10 +2,13 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+
     <title>Edinburgh Sound</title>
     <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
   </head>
-    <a href="/"><h1 class="main-heading">Edinburgh Sound</h1></a>
+    <div id="top-bar-wrapper">
+    <h1 class="main-heading"><a href="/hire-orders">Edinburgh Sound</a></h1>
   <nav>
     <ul>
       <li><a href="/hire-orders">Hire Orders</a></li>
@@ -13,10 +16,13 @@
       <li><a href="/customers">Customers</a></li>
     </ul>
   </nav>
+  </div>
 
   <body>
+
 
     <%= yield %>
 
   </body>
+
 </html>

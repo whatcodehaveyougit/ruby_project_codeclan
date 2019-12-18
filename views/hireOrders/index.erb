@@ -1,7 +1,7 @@
 <div class="banner">
-  <h1>Hire Orders</h1>
-  <nav>
-    <ul class = "secondary-nav">
+  <!-- <h1>Hire Orders</h1> -->
+  <nav class = "secondary-nav">
+    <ul>
       <li><a href="/hire-orders/new">New Order</a></li>
       <li><a href="/hire-orders/all-orders">All Customer's Orders</a></li>
     </ul>
@@ -9,26 +9,27 @@
 </div>
 
 
-<div class="hire-orders">
-  <h3 class="order-col">Name</h3>
-  <h3 class="order-col">Item</h3>
-  <h3 class="order-col">Day Price</h3>
-  <h3 class="order-col">Full Price</h3>
-  <h3 class="order-col">Discounted Price</h3>
-  <h3 class="order-col">Start Date</h3>
-  <h3 class="order-col">End Date</h3>
-  <h3 class="order-col">Notes</h3>
+<div class="hire-order-table-headings">
+  <h3 class="order-heading">Customer</h3>
+  <h3 class="order-heading">Item</h3>
+  <h3 class="order-heading">Day Price</h3>
+  <h3 class="order-heading">Full Price</h3>
+  <h3 class="order-heading">Discounted Price</h3>
+  <h3 class="order-heading">Start Date</h3>
+  <h3 class="order-heading">End Date</h3>
+  <h3 class="order-heading">Notes</h3>
+  </div>
+  <div class="orders-table-wrapper">
   <% @hire_orders.each do |hire_order| %>
-
+  <div class="order-row">
   <div class="order-col">
     <p class="capitalize name"><%= hire_order.customer.name %></p>
     <a href="/hire-orders/<%= hire_order.id %>/edit">
-      <button type="button" name="button">Edit</button>
+      <button type="button" name="button" class="edit-button" >Edit</button>
     </a>
     <form method="POST" action="/hire-orders/<%= hire_order.id %>/delete">
-      <input type="submit" value="delete">
+      <input class="delete-button" type="submit" value="Delete">
     </form>
-
   </div>
 
   <p class="capitalize name order-col"><%= hire_order.hire_item.name %></p>
@@ -39,7 +40,6 @@
   <p class="capitalize name order-col"><%= hire_order.end_date %></p>
   <p class="capitalize name order-col"><%= hire_order.notes %></p>
 
-  <% end %>
-
-
 </div>
+  <% end %>
+  </div>

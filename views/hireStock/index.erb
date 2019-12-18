@@ -1,5 +1,4 @@
   <div class="banner">
-    <h1>Hire Stock</h1>
     <nav>
       <ul class = "secondary-nav">
         <li><a href="/hire-stock/new">Add Item for Hire</a></li>
@@ -7,19 +6,26 @@
     </nav>
   </div>
 
-<div id="hire-stock" class="main-content-container">
+  <div class="hire-item-table-headings">
+    <h3 class="order-heading">Name</h3>
+    <h3 class="order-heading">Item</h3>
+    <h3 class="order-heading">Day Price</h3>
+  </div>
+<div id="hire-stock" class="">
 
   <% @hireStock.each do |hireItem| %>
-    <div class="hire-item">
-      <p class="capitalize name"><%= hireItem.name %></p>
-      <p>Price per day:  £ <%= hireItem.price %></p>
-      <a href="/hire-stock/<%= hireItem.id %>">----- More Info -----</a><br>
-      <a href="/hire-stock/<%= hireItem.id %>/edit"><button type="button">Edit</button></a>
-      <form method="POST" action="/hire-stock/<%= hireItem.id %>/delete">
-         <input type="submit" value="Delete Item"/>
-      </form>
-    </div>  <!-- Hire-item -->
+    <div class="hire-item hire-item-row">
+      <div class="capitalize name"><%= hireItem.name %><br>
+        <a href="/hire-stock/<%= hireItem.id %>/edit"><button class="edit-button" type="button">Edit</button></a>
+        <form method="POST" action="/hire-stock/<%= hireItem.id %>/delete">
+           <input class="delete-button" type="submit" value="Delete Item"/>
+        </form>
+      </div>
+      <p>£ <%= hireItem.price %></p>
+      <p><a href="/hire-stock/<%= hireItem.id %>">More Info</a></p>
 
+
+    </div>  <!-- Hire-item -->
 
   <% end %>
 
