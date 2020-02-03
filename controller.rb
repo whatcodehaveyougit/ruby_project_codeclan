@@ -1,11 +1,10 @@
 require('sinatra')
-require('sinatra/contrib/all')
-require('pry')
+require('sinatra/contrib/all') if development?
+# require('pry') for development purposes only
 require_relative('models/hireOrder')
-# I changed this hireOrder and made it at the top instead of the bottom..
 require_relative('models/customer')
 require_relative('models/hireItem')
-also_reload('./models/*')
+# also_reload('./models/*')  commented out for heroku
 
 get '/?' do
   erb(:index)
