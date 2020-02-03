@@ -1,6 +1,5 @@
 require_relative("../db/sql_runner")
 
-
 class Customer
 
 	attr_reader :id
@@ -80,12 +79,7 @@ end
 # ==============================
 
 
-# def hired()
-# 	sql = "SELECT * FROM hire_stock
-# 	INNER JOIN customers ON hire_order.customer_id = customer.id "
-# 	result = SqlRunner.run(sql)
-# 	return result.map { |hash| HireItem.new(hash)}
-# end
+# Displays all the hire items which a customer has ordered
 
 def hired()
 	sql = "SELECT * FROM hire_stock
@@ -96,6 +90,9 @@ def hired()
 	return result.map { |hash| HireItem.new(hash)}
 end
 
+# Displays the hire orders information for every order from a certain customer
+#  This was superseeded by the hired() method
+
 def all_orders()
 	sql = "SELECT * FROM hire_orders
 	WHERE hire_orders.customer_id = $1"
@@ -104,17 +101,7 @@ def all_orders()
 	return result.map { |hash| HireOrder.new(hash)}
 end
 
-	#
-	#
-  # def hired()
-  #   sql = "SELECT hire_stock.* FROM ((customers
-  #   INNER JOIN hire_orders ON customer.id = hire_orders.customer_id)
-  #   INNER JOIN hire_stock ON hire_stock.id = hire_orders.hire_item_id)
-	# 	WHERE customer.id = $1;"
-  #   result = SqlRunner.run(sql)
-  #   return result.map { |hash| HireItem.new(hash)}
-  # end
-	#
+
 
 
 end

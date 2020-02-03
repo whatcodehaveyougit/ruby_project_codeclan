@@ -11,7 +11,7 @@
   <h3 class="order-heading">Name</h3>
   <h3 class="order-heading">Address</h3>
   <h3 class="order-heading">Phone</h3>
-  <h3 class="order-heading">More Info</h3>
+  <h3 class="order-heading">Hired Items</h3>
 </div>
 
 <div id="customers" class="">
@@ -27,7 +27,7 @@
     </div>
     <p class="capitalize customer-box"><%= customer.address %></p>
     <p class="customer-box"><%= customer.phone %></p>
-    <p class="customer-box"><a href="/customers/<%= customer.id %>">More Info</a></p>
+    <p class="customer-box"><a href="/customers/<%= customer.id %>">Hired Items</a></p>
 
   </div>
   <% end %>

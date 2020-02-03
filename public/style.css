@@ -180,6 +180,10 @@ button.edit-button {
   font-size: 25px;
 }
 
+.customer-page .name {
+  font-size: 46px;
+}
+
 .customer-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

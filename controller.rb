@@ -67,9 +67,13 @@ get '/customers/new' do
   erb( :"customers/new" )
 end
 
+get '/customers/confirm/' do
+  erb( :"customers/confirm" )
+end
+
 post '/customers/?' do
   Customer.new(params).save()
-  redirect to '/customers'
+  redirect to "/customers/confirm/"
 end
 
 get '/customers/:id' do

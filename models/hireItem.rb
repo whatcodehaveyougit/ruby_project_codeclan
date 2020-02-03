@@ -75,12 +75,5 @@ class HireItem
     SqlRunner.run(sql)
   end
 
-  # ================= JOIN ====================
-
-
-
-  # def available_items()
-  #   sql "SELECT * FROM "
-  # end
 
 end

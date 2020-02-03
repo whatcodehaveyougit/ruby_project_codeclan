@@ -80,6 +80,8 @@ class HireOrder
     SqlRunner.run(sql)
   end
 
+  # ===== MAKING STUFF ACCESSIBLE ========
+
   def customer()
     sql = "SELECT * FROM customers WHERE id = $1"
     values = [@customer_id]
@@ -95,6 +97,7 @@ class HireOrder
   end
 
 # A Hire Order Instantiation is getting passed into here
+
   def hire_order()
     return
   end
@@ -114,20 +117,14 @@ class HireOrder
   end
 
   def calc()
-    sql = "SELECT hire_orders.start_date, hire_orders.end_date FROM hire_orders WHERE id = $1;"
+    sql = "SELECT hire_orders.start_date, hire_orders.end_date
+    FROM hire_orders WHERE id = $1;"
     values = [@id]
     result = SqlRunner.run(sql, values).first
     a = Date.parse(result["end_date"])
     b = Date.parse(result["start_date"])
      return (a - b).to_i
   end
-
-
-
-
-
-
-
 
 
 
