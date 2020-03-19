@@ -1,5 +1,5 @@
 
-## Edinburgh Sound Ruby Project 
+### Edinburgh Sound Ruby Project 
 
 This is my first CodeClan project which I created on my own in Week 5. Below are some images of the app.  
 
@@ -11,11 +11,13 @@ This is the form to create a hire order.
 
 ![](images/create-order.png)
 
-### Tech 
+
+## Tech 
 
  - Ruby
  - Express Server
  - Sinatra 
+ 
 
 ### Setting up this app locally 
 
