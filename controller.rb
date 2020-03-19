@@ -4,7 +4,7 @@ require('sinatra/contrib/all') if development?
 require_relative('models/hireOrder')
 require_relative('models/customer')
 require_relative('models/hireItem')
-# also_reload('./models/*')  commented out for heroku
+also_reload('./models/*') 
 
 get '/?' do
   erb(:index)
