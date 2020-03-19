@@ -1,15 +1,24 @@
+## Edinburgh Sound Ruby Project 
 
-To App uses Ruby, a Express database and Sinatra on the front end.
 
 
-To use this app Clone the code from github.
 
-Anywhere in your computer you will need to install some Ruby Gems.
-This does not have to be in a particular folder because ruby gems are global!
 
-In Terminal
+Tech 
+ - Ruby
+ - Express Server
+ - Sinatra 
 
-gem install sinatra
-gem install pry
+## Setting up this app locally 
 
-The database we use is postgres -
+
+
+- Clone this repo from github.
+
+In Terminal - this can be in any directory as Ruby gems are global
+
+- gem install sinatra
+
+- gem install pry
+
+- gem install postgres
