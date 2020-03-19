@@ -11,8 +11,9 @@ This is the form to create a hire order.
 
 ![](images/create-order.png)
 
+As can be seen this is a stock mangament software to be used by staff members of Edinburgh Sound. 
 
-## Tech 
+### Tech 
 
  - Ruby
  - Express Server
