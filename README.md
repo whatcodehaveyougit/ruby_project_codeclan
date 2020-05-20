@@ -9,8 +9,9 @@ To use the app you can visit the link provided which will take you to heroku.
 
 This is the form to create a hire order.
 
-![](images/create-order.png)
-
+<div align="center">
+ <img src="images/app.png" />
+</div>
 As can be seen this is a stock mangament software to be used by staff members of Edinburgh Sound. 
 
 ## Tech Stack
